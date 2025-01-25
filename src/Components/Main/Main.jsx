@@ -1,5 +1,8 @@
 import React from 'react'
 import book from '../../images/book_store-removebg-preview.png'
+import Card from '../Card/Card';
+
+
 const Main = () => {
     return(
         <>
@@ -15,6 +18,9 @@ const Main = () => {
                     </div>
                     <img src={book} alt=""/>
                 </div>
+            </div>
+            <div className="container">
+                <Card/>
             </div>
         </>
     )
