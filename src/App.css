@@ -62,25 +62,36 @@ body {
   background-color: #0056b3;
 }
 
-/* Card Section */
+/* Card Container */
+/* Container for the Cards */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card styles */
 .card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  width: 180px; /* Width of each card */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 220px; /* Increased height for the image */
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .card .bottom {
@@ -89,29 +100,14 @@ body {
 }
 
 .card .bottom .title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 .card .bottom .amount {
-  color: #007bff;
-  font-size: 1rem;
-}
-
-.card .bottom button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
   font-size: 0.9rem;
-}
-
-.card .bottom button:hover {
-  background-color: #218838;
+  color: #007bff;
 }
 
 /* Modal */
@@ -132,19 +128,19 @@ body {
   background: #fff;
   border-radius: 12px;
   width: 90%;
-  max-width: 500px;
-  padding: 20px;
+  max-width: 400px; /* Smaller modal */
+  padding: 15px; /* Reduce padding */
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .overlay-inner .close {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Smaller size */
   color: #333;
   cursor: pointer;
 }
@@ -160,29 +156,29 @@ body {
 }
 
 .overlay-inner .inner-box img {
-  width: 150px;
-  height: 150px;
+  width: 100px; /* Smaller image */
+  height: 100px;
   object-fit: cover;
   border-radius: 8px;
 }
 
 .overlay-inner .info {
-  margin-top: 15px;
+  margin-top: 10px;
   text-align: center;
 }
 
 .overlay-inner .info h1 {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Smaller title */
   font-weight: bold;
 }
 
 .overlay-inner .info h3 {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Smaller text */
   color: #555;
 }
 
 .overlay-inner .info h4 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #777;
 }
 
@@ -201,23 +197,37 @@ body {
 }
 
 .description {
-  margin-top: 20px;
-  font-size: 0.9rem;
+  margin-top: 10px;
+  font-size: 0.8rem;
   color: #555;
   text-align: center;
 }
 
 /* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    justify-content: space-around;
+  }
+  .card {
+    width: 200px; /* Adjust width for medium screens */
+  }
+}
+
 @media (max-width: 768px) {
-  .card img {
-    height: 150px;
+  .container {
+    justify-content: center;
   }
-
-  .overlay-inner {
-    padding: 15px;
+  .card {
+    width: 150px; /* Adjust width for small screens */
   }
+}
 
-  .header .search input {
-    width: 80%;
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column; /* Stack cards on top of each other */
+    align-items: center;
+  }
+  .card {
+    width: 100%; /* Make cards full-width on very small screens */
   }
 }
