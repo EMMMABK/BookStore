@@ -1,5 +1,5 @@
 import react from "react";
-import book_img from '../../images/book_store-removebg-preview.png'
+import Modal from "../Modal/Modal";
 
 const Card = ({book}) => {
     console.log(book);
@@ -8,16 +8,18 @@ const Card = ({book}) => {
             {
                 book.map((item) => {
                     let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
-                    if(thumbnail != undefined){
+                    let amount=item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
+                    if(thumbnail != undefined && amount != undefined){
                         return(
                             <>
                                 <div className="card">
-                                    <img src={book_img} alt="" />
+                                    <img src={thumbnail} alt="" />
                                     <div className="bottom">
-                                        <h3 className="title">Title</h3>
-                                        <p className="amount">32 $</p>
+                                        <h3 className="title">{item.volumeInfo.title}</h3>
+                                        <p className="amount">{amount} $</p>
                                     </div>
                                 </div>
+                                <Modal show={show} item={bookItem} onClose={()=>setShow(false)}/>
                             </>
                         )
                     }
