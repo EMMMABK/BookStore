@@ -1,4 +1,5 @@
 import React from 'react'
+import book from '../../images/book_store-removebg-preview.png'
 const Main = () => {
     return(
         <>
@@ -12,6 +13,7 @@ const Main = () => {
                         <input type="text" placeholder='Enter Your Book Name'/>
                         <button><i className="fas fa-search"></i></button>
                     </div>
+                    <img src={book} alt=""/>
                 </div>
             </div>
         </>
