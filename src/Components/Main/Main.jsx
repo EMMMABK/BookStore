@@ -7,7 +7,9 @@ const Main = () => {
     const [search, setSearch] = useState("")
     const searchBook = (evt) => {
         if(evt.key === "Enter"){
-            console.log('Hello');
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+ search +'&key=YOUR_API')
+            .then(res=>console.log(res))
+            .catch(err=>console.log(err))
         } 
     }
     return(
