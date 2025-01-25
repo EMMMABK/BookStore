@@ -2,13 +2,14 @@ import React, {useState} from 'react'
 import book from '../../images/book_store-removebg-preview.png'
 import Card from '../Card/Card';
 import axios from 'axios';
+import '../Main/Main.css'
 
 const Main = () => {
     const [search, setSearch] = useState("");
     const [bookData,setData] = useState([]);
     const searchBook = (evt) => {
         if(evt.key === "Enter"){
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+ search +'&key=YOUR_API')
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+ search +'&key=YOUR_API' + '&maxResults=40')
             .then(res=>console.log(res.data.items))
             .catch(err=>console.log(err))
         } 
