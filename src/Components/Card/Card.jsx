@@ -1,6 +1,8 @@
 import react from "react";
 
-const Card = () => {
+const Card = ({book}) => {
+    console.log(book);
+    
     return(
         <>
             <div className="card">
