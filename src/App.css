@@ -1,20 +1,24 @@
 /* General Styles */
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
+  background-image: url('./img/library.png'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #333;
 }
 
-/* Header Section */
 .header {
   text-align: center;
-  background: #f3f3f3;
+  background: rgba(255, 255, 255, 0.9); /* Light background with transparency */
   padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header .row_one h1 {
-  font-size: 2.5rem;
+  font-size: 3rem; /* Slightly larger font */
   color: #333;
 }
 
@@ -25,41 +29,25 @@ body {
 .header .row_two h2 {
   font-size: 1.5rem;
   color: #555;
+  text-shadow: none; /* Clear shadow to match your style */
 }
 
-.header .search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.header .search input {
+.search input {
   width: 60%;
   max-width: 400px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  outline: none;
 }
 
-.header .search input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.header .search button {
+.search button {
   margin-left: 10px;
   padding: 10px 20px;
   background-color: #007bff;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-}
-
-.header .search button:hover {
-  background-color: #0056b3;
 }
 
 /* Card Container */
